@@ -32,11 +32,12 @@ public class SwomniKinematics {
         
     }
     public static ModuleState[] swerveKinematics(Vector2D power, double rotation, double wheelbase, double trackwidth){
+        double r = Math.hypot(wheelbase,trackwidth);
         return ModuleState.fromVectors(
-                power.add(new Vector2D(-wheelbase/2,trackwidth/2).scalarMultiply(rotation)),
-                power.add(new Vector2D(-wheelbase/2,-trackwidth/2).scalarMultiply(rotation)),
-                power.add(new Vector2D(wheelbase/2,-trackwidth/2).scalarMultiply(rotation)),
-                power.add(new Vector2D(wheelbase/2,trackwidth/2).scalarMultiply(rotation))
+                power.add(new Vector2D(-wheelbase/r,trackwidth/r).scalarMultiply(rotation)),
+                power.add(new Vector2D(-wheelbase/r,-trackwidth/r).scalarMultiply(rotation)),
+                power.add(new Vector2D(wheelbase/r,-trackwidth/r).scalarMultiply(rotation)),
+                power.add(new Vector2D(wheelbase/r,trackwidth/r).scalarMultiply(rotation))
         );
     }
 
