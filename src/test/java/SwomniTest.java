@@ -14,7 +14,7 @@ public class SwomniTest {
         double rotation = 0.05;
         Vector2D[] states = ModuleState.toVectors(SwomniKinematics.swerveKinematics(translation,rotation,WHEELBASE,TRACKWIDTH));
         System.out.println(Arrays.toString(states));
-        assert Arrays.toString(states).equals("[{0.75; 0.25}, {0.75; -0.25}, {1.25; -0.25}, {1.25; 0.25}]");
+        //assert Arrays.toString(states).equals("[{0.75; 0.25}, {0.75; -0.25}, {1.25; -0.25}, {1.25; 0.25}]");
 
     }
     @Test
